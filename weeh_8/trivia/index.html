@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <title>Trivia</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1>سؤالات عمومی</h1>
+
+    <!-- Part 1 -->
+    <h2>بخش اول: چند گزینه‌ای</h2>
+    <h3>کدام سیاره به «سیاره سرخ» معروف است؟</h3>
+
+    <button class="choice">زمین</button>
+    <button class="choice correct">مریخ</button>
+    <button class="choice">مشتری</button>
+
+    <p id="result1"></p>
+
+    <hr>
+
+    <!-- Part 2 -->
+    <h2>بخش دوم: پاسخ تشریحی</h2>
+    <h3>پایتخت کشور فرانسه چیست؟</h3>
+
+    <input type="text" id="answer" placeholder="پاسخ خود را وارد کنید">
+    <button id="check">بررسی پاسخ</button>
+
+    <p id="result2"></p>
+
+    <script>
+        // Part 1
+        let buttons = document.querySelectorAll(".choice");
+        let result1 = document.querySelector("#result1");
+
+        buttons.forEach(button => {
+            button.addEventListener("click", function () {
+                if (button.classList.contains("correct")) {
+                    button.style.backgroundColor = "green";
+                    result1.innerHTML = "درست!";
+                } else {
+                    button.style.backgroundColor = "red";
+                    result1.innerHTML = "نادرست";
+                }
+            });
+        });
+
+        // Part 2
+        document.querySelector("#check").addEventListener("click", function () {
+            let input = document.querySelector("#answer");
+            let result2 = document.querySelector("#result2");
+
+            if (input.value.trim() === "پاریس") {
+                input.style.backgroundColor = "green";
+                result2.innerHTML = "درست!";
+            } else {
+                input.style.backgroundColor = "red";
+                result2.innerHTML = "نادرست";
+            }
+        });
+    </script>
+
+</body>
+</html>

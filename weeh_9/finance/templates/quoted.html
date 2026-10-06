@@ -1,0 +1,7 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <h1>Quote for {{ stock["name"] }}</h1>
+    <p>Symbol: {{ stock["symbol"] }}</p>
+    <p>Price: ${{ stock["price"] }}</p>
+{% endblock %}

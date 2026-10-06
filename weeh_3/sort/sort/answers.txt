@@ -1,0 +1,28 @@
+sort1 uses: bubble sort
+How do you know?:
+For `sort1`, the execution time is very fast for already sorted lists
+(sorted5000.txt: 0.051s) but much slower for reversed and random lists
+(reversed50000.txt: 6.334s, random50000.txt: 5.582s). This is characteristic
+of bubble sort, which performs very well on already sorted data (O(n)) but degrades
+to O(n^2) for reversed or random data due to repeated swaps.
+
+---
+
+sort2 uses: merge sort
+How do you know?:
+For `sort2`, the execution time is almost the same for all types of lists
+(sorted, reversed, random) and sccales reasonably with input size
+(e.g., sorted50000.txt: 1.053s, reversed50000.txt: 2.233s, random50000.txt: 1.857s).
+This is typical of merge sort, which has a consistent O(n log n) time complexity for
+all input types due to its divide-and-conquer approach.
+
+---
+
+sort3 uses: selection sort
+How do you know?:
+For `sort3`, the execution time for large reversed and random lists
+(e.g., reversed50000.txt: 3.892s, random50000.txt: 3.073s) is very long,
+while for sorted lists it is relatively faster (sorted50000.txt: 2.806s).
+This behavior is characteristic of selection sort, which always scans the
+entire list regardless of the initial order, resulting in O(n^2) time complexity
+for all cases.

@@ -1,0 +1,42 @@
+چگونه می‌تواتید حال و هوای شنیداری کاربر را تعیین کنید؟
+اگر songs.db حاوی ۱۰۰ آهنگ برتر شنونده در سال ۲۰۱۸ باشد، می‌توانیم حال و هوای شنیداری کاربر را با محاسبه میانگین معیارهای انرژی (energy)، شادی (valence) و قابلیت رقص (danceability) این آهنگ‌ها تعیین کنیم. این کار با استفاده از کوئری زیر امکان‌پذیر است:
+
+SELECT AVG(energy), AVG(valence), AVG(danceability)
+FROM songs;
+
+
+این روش ممکن است نماینده خوبی از کاربر نباشد زیرا:
+- تنها بر اساس ۱۰۰ آهنگ برتر سال ۲۰۱۸ محاسبه می‌شود و سلیقه کاربر ممکن است در طول زمان تغییر کرده باشد.
+- معیارهای انرژی، شادی و قابلیت رقص ممکن است به تتهایی نماینده کامل سلیقه کاربر نباشند.
+- ممکن است آهنگ‌های مورد علاقه کاربر در این لیست نباشند.
+
+
+برای محاسبه دقیق‌تر حال و هوای شنیداری کاربر، پیشنهاد می‌شود:
+- استفاده از داده‌های بیشتری از آهنگ‌های گوش داده شده توسط کاربر در طول زمان.
+- در نظر گرفتن معیارهای دیگری مانند میزان تکرار گوش دادن به آهنگ‌ها، ژانر آهنگ‌ها، زمان گوش دادن به آهنگ‌ها و نظرات کاربر در مورد آهنگ‌ها.
+- استفاده از الگوریتم‌های یادگیری ماشین برای تحلیل دقیق‌تر سلیقه کاربر.
+- بررسی رفتار کاربر در طول زمان، مانند زمان گوش دادن به آهنگ‌ها و تعداد دفعات تکرار آهنگ‌ها.
+
+
+
+How can you determine a user's listening mood?
+If songs.db contains the top 100 songs a listener listened to in 2018,
+we can determine the user's listening mood by calculating the average of the energy,
+valence, and danceability measures for these songs.
+This can be done using the following query:
+
+SELECT AVG(energy), AVG(valence), AVG(danceability)
+FROM songs;
+
+This method may not be a good representation of the user because:
+- It is calculated based on only the top 100 songs of 2018, and the user's taste may have changed over time.
+- The energy, valence, and danceability measures alone may not be a complete representation of the user's taste.
+- The user's favorite songs may not be on this list.
+
+To calculate a user's listening mood more accurately, it is recommended to:
+- Use more data from the songs the user listned to over time.
+- Considering other criteria such as the frequency of listening to songs, the genre of songs,
+the time spent listening to songs,
+and the user's opinions about the songs.
+- Using machine learning algorithms to more accurately analyze user tastes.
+- Examining user behavior over time, such as the time spent listening to songs and the number of times songs are repeated.

@@ -1,0 +1,36 @@
+/* فونت‌ها */
+body {
+    font-family: 'Vazirmatn', sans-serif;
+}
+
+/* رنگ‌ها */
+:root {
+    --primary-color: #0d6efd;
+    --secondary-color: #6c757d;
+    --dark-color: #212529;
+    --light-color: #f8f9fa;
+}
+
+/* استایل دکمه‌ها */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* استایل کارت‌ها */
+.card {
+    transition: transform 0.3s;
+}
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* استایل فوتر */
+footer {
+    margin-top: auto;
+}
+
+/* استایل نوار ناوبری */
+.navbar {
+    border-radius: 0.5rem;
+}

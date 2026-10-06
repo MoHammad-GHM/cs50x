@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <h1>Portfolio</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for stock in stocks %}
+            <tr>
+                <td>{{ stock["symbol"] }}</td>
+                <td>{{ stock["name"] }}</td>
+                <td>{{ stock["total_shares"] }}</td>
+                <td>${{ stock["price"] }}</td>
+                <td>${{ stock["total"] }}</td>
+            </tr>
+            {% endfor %}
+            <tr>
+                <td><strong>CASH</strong></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><strong>${{ cash }}</strong></td>
+            </tr>
+        </tbody>
+    </table>
+    <p>Total: ${{ total }}</p>
+{% endblock %}
